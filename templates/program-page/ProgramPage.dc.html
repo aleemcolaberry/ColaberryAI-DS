@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Web · Web Page" description="On-brand enterprise AI platform landing page — hero, catalog stats, capability cards, CTA." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</helmet>
+<div style="font-family:var(--font-body);color:var(--text-body);background:var(--surface-page);min-height:100vh">
+
+  <!-- Header -->
+  <header style="display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:20px 24px">
+    <img src="../../assets/logo/colaberry-horizontal.png" alt="ColaberryAI Research Labs" style="height:30px">
+    <nav style="display:flex;gap:26px;align-items:center">
+      <a href="#" style="font-size:15px;font-weight:500;color:var(--text-body);text-decoration:none">Platform</a>
+      <a href="#" style="font-size:15px;font-weight:500;color:var(--text-body);text-decoration:none">Resources</a>
+      <a href="#" style="font-size:15px;font-weight:500;color:var(--text-body);text-decoration:none">Industries</a>
+      <x-import component-from-global-scope="ColaberryDesignSystem_098454.Button" size="sm" hint-size="120px,40px">Book a demo</x-import>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section style="max-width:1160px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center">
+    <div>
+      <x-import component-from-global-scope="ColaberryDesignSystem_098454.Badge" tone="blue" dot="{{ true }}" hint-size="170px,28px">Enterprise AI Platform</x-import>
+      <h1 style="font-family:var(--font-display);font-weight:800;font-size:clamp(38px,5vw,58px);line-height:1.04;letter-spacing:-.02em;color:var(--text-strong);margin:18px 0 16px;text-wrap:balance">Discover, govern, and scale AI.</h1>
+      <p style="font-size:var(--fs-body-lg);color:var(--text-muted);max-width:48ch;margin:0 0 28px;line-height:1.6;text-wrap:pretty">A unified catalog where teams discover, evaluate, and deploy AI agents, MCP servers, skills, and research — governed and structured for both people and LLMs.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <x-import component-from-global-scope="ColaberryDesignSystem_098454.Button" size="lg" hint-size="150px,52px">Book a demo</x-import>
+        <x-import component-from-global-scope="ColaberryDesignSystem_098454.Button" variant="outline" size="lg" hint-size="170px,52px">Explore platform</x-import>
+      </div>
+    </div>
+    <div style="aspect-ratio:4/3;border-radius:var(--radius-2xl);background:linear-gradient(150deg,var(--blue-700),var(--blue-900));box-shadow:var(--shadow-lg);display:flex;flex-direction:column;justify-content:center;gap:14px;padding:36px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-120px;right:-100px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--cyan-500) 46%,transparent),transparent 70%)"></div>
+      <div style="font-family:var(--font-display);font-weight:800;font-size:56px;line-height:1;color:#fff;letter-spacing:-.02em;position:relative">19k+</div>
+      <div style="font-size:15px;color:rgba(255,255,255,.82);position:relative">AI resources cataloged</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;position:relative">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md);padding:12px"><div style="font-weight:700;color:#fff;font-size:18px">151+</div><div style="font-size:12px;color:rgba(255,255,255,.7)">Agents</div></div>
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md);padding:12px"><div style="font-weight:700;color:#fff;font-size:18px">1.7k+</div><div style="font-size:12px;color:rgba(255,255,255,.7)">MCP servers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section style="max-width:1100px;margin:0 auto;padding:8px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+    <div style="text-align:center;padding:22px 8px;border-right:1px solid var(--border-subtle)"><div style="font-family:var(--font-display);font-weight:800;font-size:38px;color:var(--blue-500);line-height:1">19k+</div><div style="font-size:14px;color:var(--text-muted);margin-top:8px">Resources cataloged</div></div>
+    <div style="text-align:center;padding:22px 8px;border-right:1px solid var(--border-subtle)"><div style="font-family:var(--font-display);font-weight:800;font-size:38px;color:var(--cyan-600);line-height:1">16.9k+</div><div style="font-size:14px;color:var(--text-muted);margin-top:8px">Skills indexed</div></div>
+    <div style="text-align:center;padding:22px 8px;border-right:1px solid var(--border-subtle)"><div style="font-family:var(--font-display);font-weight:800;font-size:38px;color:var(--blue-500);line-height:1">1.7k+</div><div style="font-size:14px;color:var(--text-muted);margin-top:8px">MCP servers</div></div>
+    <div style="text-align:center;padding:22px 8px"><div style="font-family:var(--font-display);font-weight:800;font-size:38px;color:var(--blue-500);line-height:1">14</div><div style="font-size:14px;color:var(--text-muted);margin-top:8px">Industries served</div></div>
+  </section>
+
+  <!-- Capabilities -->
+  <section style="max-width:1160px;margin:0 auto;padding:64px 24px">
+    <h2 style="font-family:var(--font-display);font-weight:800;font-size:var(--fs-h2);color:var(--text-strong);margin:0 0 8px;letter-spacing:-.02em">A structured destination for AI</h2>
+    <p style="font-size:var(--fs-body-lg);color:var(--text-muted);margin:0 0 32px">One place for teams and LLMs to discover, compare, and deploy intelligence.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <x-import component-from-global-scope="ColaberryDesignSystem_098454.Card" padded="{{ true }}" accent="blue" hint-size="100%,180px">
+        <span style="font-family:var(--font-mono);font-size:12px;color:var(--blue-600)">151+ agents</span>
+        <h3 style="font-size:var(--fs-h4);color:var(--text-strong);margin:8px 0 6px">AI Agents</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin:0;line-height:1.5">Enterprise agents with ownership, runbooks, and deployment readiness.</p>
+      </x-import>
+      <x-import component-from-global-scope="ColaberryDesignSystem_098454.Card" padded="{{ true }}" accent="green" hint-size="100%,180px">
+        <span style="font-family:var(--font-mono);font-size:12px;color:var(--cyan-700)">1.7k+ servers</span>
+        <h3 style="font-size:var(--fs-h4);color:var(--text-strong);margin:8px 0 6px">MCP Servers</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin:0;line-height:1.5">Model Context Protocol connectors with tool access and templates.</p>
+      </x-import>
+      <x-import component-from-global-scope="ColaberryDesignSystem_098454.Card" padded="{{ true }}" accent="blue" hint-size="100%,180px">
+        <span style="font-family:var(--font-mono);font-size:12px;color:var(--blue-600)">16.9k+ skills</span>
+        <h3 style="font-size:var(--fs-h4);color:var(--text-strong);margin:8px 0 6px">AI Skills</h3>
+        <p style="font-size:14px;color:var(--text-muted);margin:0;line-height:1.5">Reusable capability units across workflow, domain, and orchestration.</p>
+      </x-import>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:24px">
+    <div style="max-width:1100px;margin:0 auto;background:linear-gradient(135deg,var(--blue-600),var(--blue-900));border-radius:var(--radius-2xl);padding:60px 48px;text-align:center;box-shadow:var(--shadow-brand)">
+      <h2 style="font-family:var(--font-display);font-weight:800;color:#fff;font-size:var(--fs-h2);margin:0 0 12px;letter-spacing:-.02em">Build, govern, and scale AI from one layer.</h2>
+      <p style="color:rgba(255,255,255,.88);font-size:var(--fs-body-lg);margin:0 auto 28px;max-width:50ch">Align strategy, catalog discovery, and production workflows across agents, MCP, and skills.</p>
+      <x-import component-from-global-scope="ColaberryDesignSystem_098454.Button" tone="green" size="lg" hint-size="160px,52px">Request a demo</x-import>
+    </div>
+  </section>
+
+  <footer style="max-width:1160px;margin:0 auto;padding:40px 24px;border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+    <img src="../../assets/logo/colaberry-horizontal.png" alt="ColaberryAI Research Labs" style="height:26px">
+    <span style="font-size:13px;color:var(--text-subtle)">© 2026 Colaberry, Inc. · Plano, TX &amp; Boston, MA</span>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
