@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use the ColaberryAI Design System</title>
+<meta name="description" content="A practical, visual guide — for everyone at Colaberry — on how to use the ColaberryAI Design System.">
+<link rel="icon" href="assets/logo/export/favicon-32.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { background: var(--surface-page); color: var(--text-body); font-family: var(--font-body); margin: 0; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--brand-primary); }
+
+  /* Hero */
+  .g-hero { background: linear-gradient(150deg, var(--blue-600), var(--blue-900)); color:#fff; position:relative; overflow:hidden; }
+  .g-hero::after { content:""; position:absolute; right:-140px; top:-160px; width:460px; height:460px; border-radius:50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--cyan-500) 42%, transparent), transparent 70%); }
+  .g-hero__inner { position:relative; max-width:1040px; margin:0 auto; padding:46px 24px 54px; }
+  .g-hero img.logo { height:30px; display:block; margin-bottom:30px; }
+  .g-hero .eyebrow { font-family:var(--font-mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase; opacity:.85; }
+  .g-hero h1 { font-family:var(--font-display); font-weight:800; font-size:clamp(34px,5vw,54px); letter-spacing:-.025em; line-height:1.04; margin:14px 0 14px; color:#fff; }
+  .g-hero p { font-size:var(--fs-body-lg); opacity:.92; max-width:60ch; margin:0; line-height:1.55; }
+
+  /* Key links */
+  .links { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:-34px auto 0; position:relative; z-index:2; }
+  .linkcard { background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:var(--radius-xl); padding:22px; box-shadow:var(--shadow-md); text-decoration:none; display:block; transition:transform var(--dur-base), box-shadow var(--dur-base); }
+  .linkcard:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+  .linkcard .k { font-family:var(--font-mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-subtle); }
+  .linkcard .t { font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--text-strong); margin:6px 0 4px; }
+  .linkcard .d { font-size:13.5px; color:var(--text-muted); }
+
+  section.block { padding:54px 0 8px; }
+  h2.sec { font-family:var(--font-display); font-weight:800; font-size:var(--fs-h2); letter-spacing:-.02em; color:var(--text-strong); margin:0 0 6px; }
+  .lead { font-size:var(--fs-body-lg); color:var(--text-muted); margin:0 0 26px; max-width:64ch; }
+  h3.sub { font-family:var(--font-display); font-weight:700; font-size:var(--fs-h4); color:var(--text-strong); margin:26px 0 10px; }
+  p { line-height:1.65; }
+
+  /* Screenshot gallery */
+  .shots { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .shot { border:1px solid var(--border-subtle); border-radius:var(--radius-lg); overflow:hidden; background:var(--surface-card); text-decoration:none; display:block; }
+  .shot img { width:100%; display:block; border-bottom:1px solid var(--border-subtle); }
+  .shot .cap { padding:14px 18px; }
+  .shot .cap b { color:var(--text-strong); font-family:var(--font-display); }
+  .shot .cap span { display:block; font-size:13px; color:var(--text-muted); margin-top:3px; }
+  .shot.full { grid-column:1 / -1; }
+
+  /* Brand chips */
+  .swatches { display:flex; flex-wrap:wrap; gap:12px; margin:8px 0 6px; }
+  .sw { border:1px solid var(--border-subtle); border-radius:var(--radius-md); overflow:hidden; width:148px; }
+  .sw .chip { height:54px; }
+  .sw .meta { padding:8px 10px; font-size:12px; }
+  .sw .meta b { display:block; color:var(--text-strong); }
+  .sw .meta code { font-family:var(--font-mono); color:var(--text-muted); }
+
+  /* Callout / steps */
+  .who { background:var(--surface-brand-subtle); border-left:4px solid var(--brand-primary); border-radius:var(--radius-md); padding:16px 20px; margin:16px 0; }
+  ol.steps { padding-left:20px; } ol.steps li { margin:10px 0; line-height:1.6; }
+  pre { background:var(--neutral-950); color:var(--neutral-100); padding:18px 20px; border-radius:var(--radius-lg); overflow:auto; font-family:var(--font-mono); font-size:13px; line-height:1.6; }
+  .example { background:var(--surface-subtle); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:18px 22px; margin:14px 0; }
+  .example .label { font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--brand-primary); }
+  .example p { margin:8px 0 0; font-style:italic; color:var(--text-body); }
+
+  /* Two-up audience cards */
+  .aud { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .audcard { border:1px solid var(--border-subtle); border-radius:var(--radius-xl); padding:26px; background:var(--surface-card); }
+  .audcard h3 { margin-top:0; }
+  .audcard ul { margin:10px 0 0; padding-left:18px; } .audcard li { margin:7px 0; line-height:1.55; font-size:14.5px; }
+
+  /* Template gallery */
+  .tpl { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .tplcard { border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:16px 18px; background:var(--surface-card); text-decoration:none; display:block; transition:border-color var(--dur-fast), transform var(--dur-fast); }
+  .tplcard:hover { border-color:var(--border-brand); transform:translateY(-2px); }
+  .tplcard .cat { font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--brand-primary); }
+  .tplcard b { display:block; color:var(--text-strong); font-family:var(--font-display); font-size:15px; margin:5px 0 3px; }
+  .tplcard span { font-size:13px; color:var(--text-muted); }
+
+  .inside { columns:2; column-gap:32px; }
+  .inside li { margin:8px 0; line-height:1.5; break-inside:avoid; }
+
+  .golden { background:linear-gradient(135deg,var(--blue-600),var(--blue-900)); color:#fff; border-radius:var(--radius-2xl); padding:40px 44px; margin:48px 0; box-shadow:var(--shadow-brand); }
+  .golden h2 { color:#fff; margin:0 0 10px; }
+  .golden p { opacity:.92; margin:0; max-width:62ch; }
+  .golden code { background:rgba(255,255,255,.16); padding:2px 8px; border-radius:6px; font-family:var(--font-mono); }
+
+  footer.g { border-top:1px solid var(--border-subtle); margin-top:40px; }
+  footer.g .wrap { padding:26px 24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:var(--text-subtle); }
+
+  @media (max-width:860px){ .links,.shots,.aud,.tpl{grid-template-columns:1fr} .inside{columns:1} }
+</style>
+</head>
+<body>
+
+<header class="g-hero">
+  <div class="g-hero__inner">
+    <img class="logo" src="assets/logo/colaberry-horizontal-white.png" alt="ColaberryAI">
+    <div class="eyebrow">Design System · How-to Guide</div>
+    <h1>How to use the ColaberryAI Design System</h1>
+    <p>A practical, visual guide for <strong>everyone at Colaberry</strong> — whether or not you write code. The design system gives us one consistent look (logo, colors, type, components) so everything we ship — a slide, a flyer, an email, a web page, a product screen — feels like the same brand.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- KEY LINKS -->
+  <div class="links">
+    <a class="linkcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/design-system.html">
+      <div class="k">🌐 Live · Living docs</div>
+      <div class="t">Browse the system</div>
+      <div class="d">Every color, font &amp; component — click to copy.</div>
+    </a>
+    <a class="linkcard" href="https://github.com/aleemcolaberry/ColaberryAI-DS">
+      <div class="k">💻 GitHub</div>
+      <div class="t">The source code</div>
+      <div class="d">For developers — clone, import, contribute.</div>
+    </a>
+    <a class="linkcard" href="https://claude.ai/design/p/ea3217dd-438e-4ca1-905b-497a595b203f">
+      <div class="k">🎨 Claude Design</div>
+      <div class="t">The editable source</div>
+      <div class="d">Where the system is designed &amp; updated.</div>
+    </a>
+  </div>
+
+  <!-- SEE IT -->
+  <section class="block">
+    <h2 class="sec">See it first</h2>
+    <p class="lead">A quick look at what the system gives you — the living documentation, and real, on-brand documents anyone can generate from it. Click any image to open it live.</p>
+    <div class="shots">
+      <a class="shot full" href="https://aleemcolaberry.github.io/ColaberryAI-DS/design-system.html">
+        <img src="docs/screenshots/docs.png" alt="ColaberryAI living documentation">
+        <div class="cap"><b>The living documentation</b><span>Principles, color, type, components, logo rules — the single reference. Open it live →</span></div>
+      </a>
+      <a class="shot" href="https://aleemcolaberry.github.io/ColaberryAI-DS/AI-Architect-Accelerator-Brochure.html">
+        <img src="docs/screenshots/brochure.png" alt="Brochure example">
+        <div class="cap"><b>Example: print brochure</b><span>A multi-page, print-ready brochure built only from the system. Open it live →</span></div>
+      </a>
+      <a class="shot" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/one-pager/OnePager.dc.html">
+        <img src="docs/screenshots/template-onepager.png" alt="One-pager template example">
+        <div class="cap"><b>Example: one-pager template</b><span>A sell-sheet template — fork it and swap the words. Open it live →</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- BRAND BASICS -->
+  <section class="block">
+    <h2 class="sec">Brand in 10 seconds</h2>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#357895"></div><div class="meta"><b>Primary</b><code>#357895</code></div></div>
+      <div class="sw"><div class="chip" style="background:#00C4CC"></div><div class="meta"><b>Accent</b><code>#00C4CC</code></div></div>
+      <div class="sw"><div class="chip" style="background:#0D1117"></div><div class="meta"><b>Ink</b><code>neutral-950</code></div></div>
+      <div class="sw"><div class="chip" style="background:#F5F7F9;border-bottom:1px solid var(--border-subtle)"></div><div class="meta"><b>Surface</b><code>neutral-50</code></div></div>
+    </div>
+    <ul>
+      <li><strong>Teal #357895</strong> is the constant. <strong>Cyan #00C4CC</strong> is the energy/accent.</li>
+      <li><strong>Fonts:</strong> Plus Jakarta Sans (headings + body), JetBrains Mono (code/data).</li>
+      <li><strong>Voice:</strong> clear, credible, enterprise. Speak to "you / your team." No emoji in product or marketing copy.</li>
+      <li><strong>Red &amp; green</strong> are status colors only (error / success) — never brand colors.</li>
+    </ul>
+  </section>
+
+  <!-- AUDIENCES -->
+  <section class="block">
+    <h2 class="sec">How to use it</h2>
+    <p class="lead">Two paths, depending on whether you write code.</p>
+    <div class="aud">
+      <div class="audcard">
+        <h3 class="sub">👋 If you're non-technical</h3>
+        <p>You never touch code. You describe what you want in plain English and Claude builds an on-brand, downloadable file (social post, flyer, slide, email, one-pager…).</p>
+        <ol class="steps">
+          <li><strong>Open a Claude chat</strong> with the system attached — open the <a href="https://claude.ai/design/p/ea3217dd-438e-4ca1-905b-497a595b203f">Claude Design project</a>, or invoke the <code>colaberry-design</code> skill, or paste the GitHub link.</li>
+          <li><strong>Start with the magic line:</strong> <em>"Using the ColaberryAI design system, …"</em></li>
+          <li><strong>Say four things:</strong> what (e.g. Instagram post), size (e.g. 1080×1080), the words (headline + CTA), and the vibe.</li>
+          <li><strong>Refine &amp; download:</strong> ask for "3 options," tweak in plain English, then export the file.</li>
+        </ol>
+        <div class="example">
+          <div class="label">Copy-paste starter</div>
+          <p>"Using the ColaberryAI design system, create a [social post / flyer / slide] at [size] for [topic]. Headline: [your headline]. Add a [call-to-action] button and the logo. Keep it warm and on-brand, no emoji — give me 3 options."</p>
+        </div>
+        <div class="example">
+          <div class="label">Worked example</div>
+          <p>"Using the ColaberryAI design system, make a square Instagram post (1080×1080) announcing our AI Architect Accelerator founding cohort. Headline: 'Bring your idea. Leave with a deployed AI system.' Add an 'Apply now' button and the logo. Give me 3 options."</p>
+        </div>
+        <div class="who">💡 You never need hex codes or fonts — Claude pulls those automatically. Your job is the <strong>message and the format</strong>.</div>
+      </div>
+
+      <div class="audcard">
+        <h3 class="sub">🛠️ If you're technical</h3>
+        <p>Everything is static and dependency-free — no build step.</p>
+        <h3 class="sub" style="font-size:15px">Plain HTML</h3>
+        <pre>&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;script src="_ds_bundle.js"&gt;&lt;/script&gt;
+&lt;!-- components on window.ColaberryDesignSystem_098454 --&gt;</pre>
+        <h3 class="sub" style="font-size:15px">React (Vite / CRA / Next)</h3>
+        <pre>import 'colaberry/styles.css';
+import { Button } from 'colaberry/components/core/Button';
+import { Card }   from 'colaberry/components/core/Card';</pre>
+        <ul>
+          <li>Reference <strong>semantic tokens</strong>, never raw hex — <code>var(--brand-accent)</code>, <code>var(--surface-page)</code>, <code>var(--text-strong)</code>, <code>var(--space-6)</code>.</li>
+          <li><strong>Dark mode is free</strong> — set <code>data-theme="dark"</code> on <code>&lt;html&gt;</code>. The teal primary stays; surfaces/text invert.</li>
+          <li>20 components ship with TypeScript types (<code>.d.ts</code>) and a usage prompt (<code>.prompt.md</code>) each.</li>
+          <li>Full install steps in <a href="https://github.com/aleemcolaberry/ColaberryAI-DS/blob/main/IMPLEMENTATION.md">IMPLEMENTATION.md</a>; brand rules in <a href="https://github.com/aleemcolaberry/ColaberryAI-DS/blob/main/BRAND.md">BRAND.md</a>.</li>
+        </ul>
+        <pre>git clone https://github.com/aleemcolaberry/ColaberryAI-DS.git
+cd ColaberryAI-DS
+npm start   # → http://localhost:3000</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATE GALLERY -->
+  <section class="block">
+    <h2 class="sec">Fork-ready templates</h2>
+    <p class="lead">13 ready-made layouts. Open one, swap the copy, export. Click to preview each live.</p>
+    <div class="tpl">
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/program-page/ProgramPage.dc.html"><span class="cat">Web</span><b>Web Page</b><span>Landing page — hero, stats, cards, CTA.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/deck-slide/DeckSlide.dc.html"><span class="cat">Deck</span><b>Deck Slides</b><span>16:9 title + content slides, PPTX-ready.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/social-post/SocialPost.dc.html"><span class="cat">Social</span><b>Social Kit</b><span>Carousel + every feed/story format.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/email-newsletter/EmailNewsletter.dc.html"><span class="cat">Email</span><b>Newsletter</b><span>600px email-safe digest.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/brochure/Brochure.dc.html"><span class="cat">Print</span><b>Brochure</b><span>Bi-fold, print-ready.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/one-pager/OnePager.dc.html"><span class="cat">Print</span><b>One-Pager</b><span>A4 sell-sheet / leave-behind.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/comparison-sheet/ComparisonSheet.dc.html"><span class="cat">Print</span><b>Comparison Sheet</b><span>Us-vs-them sales sheet.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/certificate/Certificate.dc.html"><span class="cat">Print</span><b>Certificate</b><span>Completion certificate + seal.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/case-study/CaseStudy.dc.html"><span class="cat">Sales</span><b>Case Study</b><span>Customer outcome with metrics.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/proposal/Proposal.dc.html"><span class="cat">Sales</span><b>Proposal / Quote</b><span>Pricing table with totals.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/business-card/BusinessCard.dc.html"><span class="cat">Sales</span><b>Business Card</b><span>Front + back, print-ready.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/event-poster/EventPoster.dc.html"><span class="cat">Event</span><b>Event Poster</b><span>A4 webinar / demo poster.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/standee/Standee.dc.html"><span class="cat">Event</span><b>Standee</b><span>Roll-up banner.</span></a>
+    </div>
+    <p style="margin-top:18px">Plus a full <a href="https://aleemcolaberry.github.io/ColaberryAI-DS/ui_kits/marketing-website/index.html">marketing-website UI kit</a> (Home · Catalog · Book-a-demo) built only from the components.</p>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="block">
+    <h2 class="sec">What's inside</h2>
+    <ul class="inside">
+      <li><strong>245 design tokens</strong> (light + dark) — color, type, spacing, radius, shadow, motion. Exported as <code>tokens.json</code>.</li>
+      <li><strong>20 components</strong> — Button, Badge, Card, Avatar, Input, Textarea, Checkbox, Switch, Accordion, Breadcrumb, Pagination, Tooltip, Popover, Progress, Skeleton, Toast, Table, Dialog, Drawer, Carousel.</li>
+      <li><strong>Foundation guidelines</strong> — color ramps, type scale, spacing, radius, shadow, logo &amp; icon rules, data-viz palette.</li>
+      <li><strong>13 fork-ready templates</strong> + a marketing-website UI kit.</li>
+      <li><strong>Full logo system</strong> — marks, lockups, mono variants, favicons, app icons, social cards.</li>
+      <li><strong>WCAG 2.2</strong> contrast audit + hand-off &amp; prompting guides.</li>
+    </ul>
+  </section>
+
+  <!-- GOLDEN RULE -->
+  <div class="golden">
+    <h2 class="sec">The golden rule</h2>
+    <p>Start with <code>"Using the ColaberryAI design system, …"</code> and describe the outcome. The system supplies the rest — colors, type, logo, components, voice — so anything you make comes out on-brand the first time.</p>
+  </div>
+
+</div>
+
+<footer class="g">
+  <div class="wrap">
+    <span>© 2026 Colaberry, Inc. · ColaberryAI Design System</span>
+    <span><a href="https://aleemcolaberry.github.io/ColaberryAI-DS/design-system.html">Living docs</a> · <a href="https://github.com/aleemcolaberry/ColaberryAI-DS">GitHub</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
