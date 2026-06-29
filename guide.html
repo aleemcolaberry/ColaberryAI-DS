@@ -45,6 +45,11 @@
   .shot .cap span { display:block; font-size:13px; color:var(--text-muted); margin-top:3px; }
   .shot.full { grid-column:1 / -1; }
 
+  /* Scrollable full-doc panel */
+  .scrollbox { border:1px solid var(--border-subtle); border-radius:var(--radius-lg); max-height:560px; overflow-y:auto; background:var(--surface-card); box-shadow:var(--shadow-sm) inset; }
+  .scrollbox img { width:100%; display:block; }
+  .scrollhint { font-size:13px; color:var(--text-subtle); margin:8px 2px 0; }
+
   /* Brand chips */
   .swatches { display:flex; flex-wrap:wrap; gap:12px; margin:8px 0 6px; }
   .sw { border:1px solid var(--border-subtle); border-radius:var(--radius-md); overflow:hidden; width:148px; }
@@ -142,6 +147,16 @@
         <div class="cap"><b>Example: one-pager template</b><span>A sell-sheet template — fork it and swap the words. Open it live →</span></div>
       </a>
     </div>
+  </section>
+
+  <!-- FOUNDATIONS & COMPONENTS -->
+  <section class="block">
+    <h2 class="sec">Foundations &amp; components</h2>
+    <p class="lead">The whole system at a glance — logo rules, theming, the full color palette, typography, spacing, motion, and the 20-component library. Scroll the panel below, or open the living docs to click and copy any value.</p>
+    <div class="scrollbox">
+      <a href="https://aleemcolaberry.github.io/ColaberryAI-DS/design-system.html"><img src="docs/screenshots/docs-full.png" alt="ColaberryAI living documentation — colors, type, spacing, motion, components"></a>
+    </div>
+    <p class="scrollhint">↕ Scroll inside the panel · or <a href="https://aleemcolaberry.github.io/ColaberryAI-DS/design-system.html">open the interactive living docs →</a></p>
   </section>
 
   <!-- BRAND BASICS -->
