@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../../tokens/fonts.css">
+<link rel="stylesheet" href="../../../tokens/colors.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1280px; height:640px; overflow:hidden; }
+  .card {
+    width:1280px; height:640px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 88% 8%, rgba(255,255,255,.14), transparent 46%),
+      linear-gradient(150deg, var(--blue-600,#2f6f88), var(--blue-900,#16313f));
+    color:#fff; font-family:var(--font-body,'Plus Jakarta Sans',sans-serif);
+    padding:76px 86px; display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .card::before { content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:linear-gradient(160deg,#000 0%,rgba(0,0,0,.3) 50%,transparent 80%); }
+  .card::after { content:""; position:absolute; right:-160px; bottom:-200px; width:600px; height:600px;
+    border-radius:50%; background:radial-gradient(circle, rgba(0,196,204,.42), transparent 68%); }
+  .top { position:relative; display:flex; align-items:center; justify-content:space-between; }
+  .top img { height:48px; display:block; }
+  .badge { font-family:var(--font-mono,'JetBrains Mono',monospace); font-size:15px; letter-spacing:.14em;
+    text-transform:uppercase; border:1px solid rgba(255,255,255,.45); border-radius:999px; padding:9px 18px; opacity:.95; }
+  .mid { position:relative; }
+  .eyebrow { font-family:var(--font-mono,'JetBrains Mono',monospace); font-size:17px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--cyan-300,#7fe3e8); margin-bottom:18px; }
+  h1 { font-family:var(--font-display,'Plus Jakarta Sans',sans-serif); font-weight:800; font-size:78px;
+    line-height:1.02; letter-spacing:-.03em; }
+  h1 .accent { color:var(--cyan-300,#7fe3e8); }
+  p.sub { font-size:26px; line-height:1.45; opacity:.92; margin-top:22px; max-width:34ch; }
+  .foot { position:relative; display:flex; align-items:center; }
+  .pill { background:#fff; color:var(--blue-700,#27576b); font-weight:700; font-size:20px;
+    font-family:var(--font-mono,'JetBrains Mono',monospace); padding:13px 26px; border-radius:999px; }
+  .stats { display:flex; gap:32px; font-size:19px; opacity:.9; margin-left:auto; }
+  .stats b { font-family:var(--font-display,sans-serif); font-weight:800; font-size:23px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <img src="../../../assets/logo/colaberry-horizontal-white.png" alt="ColaberryAI">
+      <span class="badge">Design System · v2.0</span>
+    </div>
+    <div class="mid">
+      <div class="eyebrow">Brand · Tokens · Components · Templates</div>
+      <h1>The ColaberryAI<br><span class="accent">Design System</span></h1>
+      <p class="sub">Brand foundations, design tokens, accessible components &amp; UI kits — one source of truth.</p>
+    </div>
+    <div class="foot">
+      <span class="pill">aleemcolaberry.github.io/ColaberryAI-DS</span>
+      <div class="stats">
+        <span><b>245</b> tokens</span>
+        <span><b>20</b> components</span>
+        <span><b>13</b> templates</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
