@@ -68,12 +68,15 @@
   .audcard ul { margin:10px 0 0; padding-left:18px; } .audcard li { margin:7px 0; line-height:1.55; font-size:14.5px; }
 
   /* Template gallery */
-  .tpl { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-  .tplcard { border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:16px 18px; background:var(--surface-card); text-decoration:none; display:block; transition:border-color var(--dur-fast), transform var(--dur-fast); }
-  .tplcard:hover { border-color:var(--border-brand); transform:translateY(-2px); }
+  .tpl { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .tplcard { border:1px solid var(--border-subtle); border-radius:var(--radius-lg); background:var(--surface-card); text-decoration:none; display:block; overflow:hidden; transition:border-color var(--dur-fast), transform var(--dur-fast), box-shadow var(--dur-fast); }
+  .tplcard:hover { border-color:var(--border-brand); transform:translateY(-3px); box-shadow:var(--shadow-md); }
+  .tplcard .thumb { display:block; height:172px; background:var(--surface-subtle); border-bottom:1px solid var(--border-subtle); overflow:hidden; }
+  .tplcard .thumb img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+  .tplcard .body { display:block; padding:13px 16px; }
   .tplcard .cat { font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--brand-primary); }
-  .tplcard b { display:block; color:var(--text-strong); font-family:var(--font-display); font-size:15px; margin:5px 0 3px; }
-  .tplcard span { font-size:13px; color:var(--text-muted); }
+  .tplcard b { display:block; color:var(--text-strong); font-family:var(--font-display); font-size:15px; margin:4px 0 2px; }
+  .tplcard span.d { font-size:13px; color:var(--text-muted); }
 
   .inside { columns:2; column-gap:32px; }
   .inside li { margin:8px 0; line-height:1.5; break-inside:avoid; }
@@ -212,19 +215,19 @@ npm start   # → http://localhost:3000</pre>
     <h2 class="sec">Fork-ready templates</h2>
     <p class="lead">13 ready-made layouts. Open one, swap the copy, export. Click to preview each live.</p>
     <div class="tpl">
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/program-page/ProgramPage.dc.html"><span class="cat">Web</span><b>Web Page</b><span>Landing page — hero, stats, cards, CTA.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/deck-slide/DeckSlide.dc.html"><span class="cat">Deck</span><b>Deck Slides</b><span>16:9 title + content slides, PPTX-ready.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/social-post/SocialPost.dc.html"><span class="cat">Social</span><b>Social Kit</b><span>Carousel + every feed/story format.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/email-newsletter/EmailNewsletter.dc.html"><span class="cat">Email</span><b>Newsletter</b><span>600px email-safe digest.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/brochure/Brochure.dc.html"><span class="cat">Print</span><b>Brochure</b><span>Bi-fold, print-ready.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/one-pager/OnePager.dc.html"><span class="cat">Print</span><b>One-Pager</b><span>A4 sell-sheet / leave-behind.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/comparison-sheet/ComparisonSheet.dc.html"><span class="cat">Print</span><b>Comparison Sheet</b><span>Us-vs-them sales sheet.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/certificate/Certificate.dc.html"><span class="cat">Print</span><b>Certificate</b><span>Completion certificate + seal.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/case-study/CaseStudy.dc.html"><span class="cat">Sales</span><b>Case Study</b><span>Customer outcome with metrics.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/proposal/Proposal.dc.html"><span class="cat">Sales</span><b>Proposal / Quote</b><span>Pricing table with totals.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/business-card/BusinessCard.dc.html"><span class="cat">Sales</span><b>Business Card</b><span>Front + back, print-ready.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/event-poster/EventPoster.dc.html"><span class="cat">Event</span><b>Event Poster</b><span>A4 webinar / demo poster.</span></a>
-      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/standee/Standee.dc.html"><span class="cat">Event</span><b>Standee</b><span>Roll-up banner.</span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/program-page/ProgramPage.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-webpage.png" alt="Web page template"></span><span class="body"><span class="cat">Web</span><b>Web Page</b><span class="d">Landing page — hero, stats, cards, CTA.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/deck-slide/DeckSlide.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-deck.png" alt="Deck slides template"></span><span class="body"><span class="cat">Deck</span><b>Deck Slides</b><span class="d">16:9 title + content slides, PPTX-ready.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/social-post/SocialPost.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-social.png" alt="Social kit template"></span><span class="body"><span class="cat">Social</span><b>Social Kit</b><span class="d">Carousel + every feed/story format.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/email-newsletter/EmailNewsletter.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-email.png" alt="Email newsletter template"></span><span class="body"><span class="cat">Email</span><b>Newsletter</b><span class="d">600px email-safe digest.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/brochure/Brochure.dc.html"><span class="thumb"><img src="docs/screenshots/brochure.png" alt="Brochure template"></span><span class="body"><span class="cat">Print</span><b>Brochure</b><span class="d">Bi-fold, print-ready.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/one-pager/OnePager.dc.html"><span class="thumb"><img src="docs/screenshots/template-onepager.png" alt="One-pager template"></span><span class="body"><span class="cat">Print</span><b>One-Pager</b><span class="d">A4 sell-sheet / leave-behind.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/comparison-sheet/ComparisonSheet.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-comparison.png" alt="Comparison sheet template"></span><span class="body"><span class="cat">Print</span><b>Comparison Sheet</b><span class="d">Us-vs-them sales sheet.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/certificate/Certificate.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-certificate.png" alt="Certificate template"></span><span class="body"><span class="cat">Print</span><b>Certificate</b><span class="d">Completion certificate + seal.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/case-study/CaseStudy.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-casestudy.png" alt="Case study template"></span><span class="body"><span class="cat">Sales</span><b>Case Study</b><span class="d">Customer outcome with metrics.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/proposal/Proposal.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-proposal.png" alt="Proposal template"></span><span class="body"><span class="cat">Sales</span><b>Proposal / Quote</b><span class="d">Pricing table with totals.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/business-card/BusinessCard.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-card.png" alt="Business card template"></span><span class="body"><span class="cat">Sales</span><b>Business Card</b><span class="d">Front + back, print-ready.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/event-poster/EventPoster.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-poster.png" alt="Event poster template"></span><span class="body"><span class="cat">Event</span><b>Event Poster</b><span class="d">A4 webinar / demo poster.</span></span></a>
+      <a class="tplcard" href="https://aleemcolaberry.github.io/ColaberryAI-DS/templates/standee/Standee.dc.html"><span class="thumb"><img src="docs/screenshots/tpl-standee.png" alt="Standee template"></span><span class="body"><span class="cat">Event</span><b>Standee</b><span class="d">Roll-up banner.</span></span></a>
     </div>
     <p style="margin-top:18px">Plus a full <a href="https://aleemcolaberry.github.io/ColaberryAI-DS/ui_kits/marketing-website/index.html">marketing-website UI kit</a> (Home · Catalog · Book-a-demo) built only from the components.</p>
   </section>
